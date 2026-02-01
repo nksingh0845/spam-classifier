@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Spam Classifier</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f2f2f2;
+            text-align: center;
+            margin-top: 100px;
+        }
+        textarea {
+            width: 300px;
+            height: 100px;
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+        }
+        h2 {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Spam Message Detector</h1>
+
+    <form method="POST" action="/predict">
+        <textarea name="message" placeholder="Enter message here"></textarea><br><br>
+        <button type="submit">Check</button>
+    </form>
+
+    {% if prediction %}
+        <h2>{{ prediction }}</h2>
+    {% endif %}
+
+</body>
+</html>
